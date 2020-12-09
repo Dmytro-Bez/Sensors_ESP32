@@ -136,8 +136,14 @@ sensors_event_t event;
 accel.getEvent(&event);
  
 /* Display the results (acceleration is measured in m/s^2) */
-Serial.print("X: "); Serial.println(event.acceleration.x); Serial.print(" ");
-Serial.print("Y: "); Serial.println(event.acceleration.y); Serial.print(" ");
-Serial.print("Z: "); Serial.println(event.acceleration.z); //Serial.print(" ");Serial.println("m/s^2 ");
+Serial.print("X: "); 
+Serial.println(event.acceleration.x);
+Serial.print(" ");
+Serial.print("Y: "); 
+Serial.println(event.acceleration.y);
+Serial.print(" ");
+Serial.print("Z: "); 
+Serial.println(event.acceleration.z); 
+//Serial.print(" ");Serial.println("m/s^2 ");
 delay(500);
 }

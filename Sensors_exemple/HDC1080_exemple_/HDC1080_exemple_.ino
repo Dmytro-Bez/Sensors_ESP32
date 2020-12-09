@@ -10,16 +10,22 @@ void setup() {
 }
 
 void loop() {
-
-//=============================================HDC1080 test==============================//
+  read_data();
+  delay(5000);
+}
+float read_data(){
+  //=============================================HDC1080 test==============================//
   Serial.println("HDC1080 test: ");
   Serial.print("T:");
-  Serial.print(hdc1080.readTemperature());
+  float Temper = hdc1080.readTemperature();
+  Serial.print(Temper);
   Serial.println("C");
+  
   Serial.print("Rh:");
-  Serial.print(hdc1080.readHumidity());
+  float Humid = hdc1080.readHumidity();
+  Serial.print(Humid);
   Serial.println("%");
   Serial.println("===============");
-  
-  delay(5000);
+  return Temper;
+  return Humid;
 }

@@ -24,9 +24,7 @@ void loop() {
   }
   delay(500);
 }
-
-bool send_ccs811(){
-  stat = false;
+int send_ccs811(){
   float temp = ccs.calculateTemperature();
   if(!ccs.readData()){
     Serial.print("CO2: ");
@@ -35,7 +33,6 @@ bool send_ccs811(){
     Serial.print(ccs.getTVOC());
     Serial.print("ppb Temp:");
     Serial.println(temp);
-    stat = true;
   }
-  return stat;
+  return ccs.getTVOC();
 }

@@ -18,8 +18,13 @@ void setup() {
 }
 
 void loop() {
+  read_mhz19_data();
+  delay(2000);
+}
+
+int read_mhz19_data(){
   mhz19.readCO2(&co2, &temp);
- int a = co2;
- Serial.println(a);
- delay(2000);
+  int a = co2 - 690;
+  Serial.println(a);
+  return a;
 }
